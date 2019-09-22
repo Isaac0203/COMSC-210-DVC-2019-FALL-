@@ -86,7 +86,7 @@ int main()
 		cout << excpt.what() << endl;
 		cout << "You should enter the command number between 1, 2, 3, or 4." << endl;
 	}
-	catch (int score) // exp is the score in parameter
+	catch (int& score) // exp is the score in parameter
 	{
 		cout << "Oh no! No more money to survive!" << endl;
 		cout << "You died..." << endl;
