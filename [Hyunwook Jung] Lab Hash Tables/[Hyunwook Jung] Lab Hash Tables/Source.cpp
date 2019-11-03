@@ -31,6 +31,7 @@ public:
 		next = nullptr;
 	}
 	~Node() {
+
 	}
 };
 
@@ -65,7 +66,7 @@ int HashSearch(Node HashTable[], int key)
 	int index = key % 10; // Get Bucket index
 	// 1. IF THE BUCKET IS EMPTY
 	if ((HashTable[index]).next == nullptr) { 
-		cout << "Value not found in the bucket[" << index << "]" << endl;
+		cout << "****Value not found in the bucket[" << index << "]" << endl;
 		return -1;
 	}
 	// 2. NOT EMPTY, START SEARCHING
@@ -75,7 +76,7 @@ int HashSearch(Node HashTable[], int key)
 		while (curIndexNode != nullptr)
 		{
 			if ((*curIndexNode).data == key) { // If the same value is found
-				cout << "Value found in the bucket[" << index << "]" << endl;
+				cout << "**************Value found in the bucket[" << index << "]" << endl;
 				return 1;
 			}
 			else {// value Not found in the current Index
@@ -84,13 +85,29 @@ int HashSearch(Node HashTable[], int key)
 			}
 		}
 		// If while loop ends without any return value, no key value in the bucket
-		cout << "Value not found in the bucket[" << index << "]" << endl;
+		cout << "******Value not found in the bucket[" << index << "]" << endl;
 		return 0;
 	}
 	/*	return -1 if that bucket is empty
 		return 1 if found
 		return 0 if bucket is not empty but not found in the bucket
 	*/
+}
+void HashDelete(Node HashTable[], int bucketNum) {
+	Node* curNode = nullptr;
+	Node* nextPtr = nullptr;
+	for (int i = 0; i < bucketNum; i++)
+	{
+		curNode = HashTable[i].next;
+		nextPtr = HashTable[i].next;
+		while (curNode != nullptr)
+		{
+			nextPtr = curNode->next;
+			delete curNode;
+			curNode = nextPtr;
+		}
+	}
+
 }
 int main()
 {
@@ -128,5 +145,7 @@ int main()
 			break;
 		}
 	} 
+	HashDelete(HashTable, 10);
+	cout << "Dynamically Allocated Data deleted" << endl;
 	return 0;
 }
