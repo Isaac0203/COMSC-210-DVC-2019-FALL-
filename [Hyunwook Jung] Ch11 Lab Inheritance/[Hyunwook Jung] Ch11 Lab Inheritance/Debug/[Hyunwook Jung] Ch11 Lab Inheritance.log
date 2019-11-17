@@ -1,0 +1,4 @@
+﻿  Source.cpp
+F:\Extra Inventory\CSCSCSCS Projects\[Hyunwook Jung] Ch11 Lab Inheritance\[Hyunwook Jung] Ch11 Lab Inheritance\Source.cpp(117,25): error C2601: 'Musicians::Perc': local function definitions are illegal
+F:\Extra Inventory\CSCSCSCS Projects\[Hyunwook Jung] Ch11 Lab Inheritance\[Hyunwook Jung] Ch11 Lab Inheritance\Source.cpp(86): message : this line contains a '{' which has not yet been matched
+F:\Extra Inventory\CSCSCSCS Projects\[Hyunwook Jung] Ch11 Lab Inheritance\[Hyunwook Jung] Ch11 Lab Inheritance\Source.cpp(117): fatal error C1075: '{': no matching token found
